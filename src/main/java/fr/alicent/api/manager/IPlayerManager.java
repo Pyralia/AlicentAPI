@@ -4,7 +4,9 @@ import fr.alicent.api.player.CorePlayer;
 import fr.alicent.api.player.IRank;
 import org.bukkit.entity.Player;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 /**
@@ -66,5 +68,13 @@ public interface IPlayerManager {
      * @return a list of Rank object.
      */
     List<IRank> getRanks();
+
+    Map<CorePlayer, String> getPlayerToNickMap();
+    Map<String, CorePlayer> getNickToPlayerMap();
+
+
+    Player getBukkitPlayer(String name);
+
+    Player getBukkitPlayer(UUID uuid);
 
 }
